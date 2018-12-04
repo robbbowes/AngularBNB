@@ -8,7 +8,7 @@ import { Rental } from '../shared/rental.model';
 })
 export class RentalListComponent implements OnInit {
 
-  rentalItems: Rental[] = [];
+  rentals: Rental[] = [];
 
   constructor(private rentalService: RentalService) { }
 
@@ -17,8 +17,8 @@ export class RentalListComponent implements OnInit {
     const rentalObservable = this.rentalService.getRentals();
 
     rentalObservable.subscribe(
-      (rentalItems: Rental[]) => {
-        this.rentalItems = rentalItems;
+      (rentals: Rental[]) => {
+        this.rentals = rentals;
       },
       (error) => {
       },
